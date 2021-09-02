@@ -147,7 +147,7 @@ targets=$(echo ${imglist} | tr ' ' '\n' | grep "${IMAGE}")
 tgt_count=$(echo ${targets} | wc -w | sed -e 's/^[ \t]*//')
 tgt_retain=$(( NUMBER_TO_RETAIN - OTHER_RETAIN ))
 if [ ${tgt_count} -le ${tgt_retain} ]; then
-    echo 1>&2 "We have ${tgt_count} '${IMAGE}' (<${tgt_retain})"
+    echo 1>&2 "We have ${tgt_count} '${IMAGE}' (<=${tgt_retain})"
     echo 1>&2 "Manually purge some non-'${IMAGE}' images."
     if [ -n "${DRY_RUN}" ]; then
         exit 0  # We didn't really purge anything
