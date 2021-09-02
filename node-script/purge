@@ -48,7 +48,7 @@ check_image_count () {
                 | sed -e 's/^[ \t]*//')
     if [ ${count} -lt ${NUMBER_TO_RETAIN} ]; then
         if [ -n "${VERBOSE}" ]; then
-            echo "${count} images present (<= ${NUMBER_TO_RETAIN}); exiting."
+            echo "${count} images present (<=${NUMBER_TO_RETAIN}); exiting."
         fi
         exit 0
     fi
